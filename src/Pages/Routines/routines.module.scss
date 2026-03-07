@@ -1,0 +1,81 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.routines{
+    animation: fadeIn .4s ease;
+    height: 80vh;
+    display: grid;
+    grid-template-rows: 10% 90%;
+
+    .routinesList{
+        height: 100%;
+        align-content: center;
+        text-align: center;
+        a{
+            border: 1px solid black;
+            color: black;
+            text-decoration: none;
+            padding: 10px 30px;
+            &:focus{
+              background-color: red;
+            }
+        }
+    }
+
+    .popUp{
+      border: 1px dotted black;
+      position: relative;
+      bottom: 600px;
+      height: 550px;
+      width: 90%;
+      border-radius: 20px;
+      margin: auto;
+      background-color: rgba(120, 120, 120, .9);
+      overflow: scroll;
+      padding: 25px;
+      ul{
+        padding: 0;
+        margin: 0;
+        li{
+          display: flex;
+          justify-content: space-between;
+          border: .5px solid whitesmoke;
+          margin-bottom: 2px;
+          align-items: center;
+          button{
+            height: 50%;
+            background-color: transparent;
+            border-radius: 20px;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .doneButton{
+        width: 300px;
+        height: 40px;
+        position: fixed;
+        bottom: 100px;
+        left: 21%;
+        border-radius: 20px;
+        background-color: lightgreen;
+        border: none;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+      .hide{
+        display: none;
+      }
+}
+
+

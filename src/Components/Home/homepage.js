@@ -1,0 +1,46 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+import styles from './homepage.module.scss';
+
+function Homepage(){
+    return(
+        <>
+            <section className={styles.home}>
+                <section className={styles.weekly}>
+                    <h3>This Week</h3>
+                    <div className={styles.weeklyResults}>
+                        <div>
+                            <div>workouts</div>
+                            <div>0</div>
+                        </div>
+                        <div>
+                            <div>minutes</div>
+                            <div>0</div>
+                        </div>
+                        <div>
+                            <div>sets</div>
+                            <div>0</div>
+                        </div>
+                    </div>
+                </section>
+                <section className={styles.quick}>
+                    <h3>quick start</h3>
+                    <div className={styles.quickStart}>
+                        <p>create your first routine</p>
+                        <Link to="routines">tap to get started</Link>
+                    </div>
+                </section>
+                <section className={styles.recent}>
+                    <h3>recent activity</h3>
+                    <div className={styles.recentActivity}>
+                        <p>No workouts yet</p>
+                        <Link to="history">start a routine to track your progress</Link>
+                    </div>
+                </section>
+            </section>
+        </>
+    )
+};
+
+export default Homepage;

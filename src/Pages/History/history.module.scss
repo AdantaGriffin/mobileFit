@@ -1,0 +1,28 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.history{
+    animation: fadeIn .4s ease;
+    height: 80vh;
+    display: grid;
+    grid-template-rows: 15% 35% 50%;
+    .historyRecords{
+        text-align: center;
+        td{
+            border: 1px solid black;
+            border-radius: 20px;
+        }
+        border-spacing: 15px;
+    }
+    .historyList{
+        align-content: center;
+        text-align: center;
+    }
+}

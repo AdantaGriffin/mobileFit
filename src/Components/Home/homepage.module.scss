@@ -1,0 +1,47 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.home{
+    animation: fadeIn 0.4s ease;
+    height: 80vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.weekly{
+    padding: 5px;
+    color: white;
+    border-radius: 20px;
+    background: linear-gradient(rgb(175, 71, 206), rgb(221, 123, 246));
+    box-shadow: 1px 1px 10px rgb(87, 87, 88);
+    height: 60% ;
+    width: 90%;
+    margin: auto;
+    align-content: center;
+    .weeklyResults{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+    }
+}
+.recent, .quick{
+    .weeklyResults, .quickStart, .recentActivity{
+        border: 2px dotted grey;
+        height: 60%;
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        align-content: center;
+    }
+    a{
+        color: black;
+        text-decoration: none;
+    }
+}
