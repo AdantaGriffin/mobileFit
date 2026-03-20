@@ -1,5 +1,5 @@
-import React, {useState, useRef} from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import styles from './routines.module.scss';
 import { useApi } from '../../Components/Api/api';
 
@@ -51,9 +51,6 @@ function Routines(){
       setRoutineTitle('');
       setPopUp(false);
     };
-    const isAdded = (id) => {
-      return savedRoutines[0]?.exercise?.some(e => e.id === id);
-    };
     return (
         <>
             <div className={styles.routines}>
@@ -91,7 +88,7 @@ function Routines(){
                         <ul className={styles.popUpList}>
                             {filtered.map(x => (
                                 <li key={x.id}>
-                                    <img src={x.image} height="30px"/>
+                                    <img alt={x.name} src={x.image} height="30px"/>
                                     {x.name}
                                     
                                     <button onClick={(e) => {add(x); e.target.innerText = '-'}} className={styles.add}>+</button></li>

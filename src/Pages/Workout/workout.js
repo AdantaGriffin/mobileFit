@@ -1,6 +1,6 @@
 import styles from './workout.module.scss';
 import React, {useEffect, useState} from 'react';
-import {useParams, Navigate, useNavigate} from 'react-router-dom';
+import {useParams, useNavigate} from 'react-router-dom';
 import { useApi } from '../../Components/Api/api';
 
 function Workout(){
@@ -19,7 +19,7 @@ function Workout(){
             setTimer(prev => prev + 1);
         }, [1000]);
         return () => clearInterval(interval);
-    }, [on])
+    }, [on, setTimer])
     const start = (e) => {
         setOn(prev => !prev);
         if(!on){
@@ -52,8 +52,8 @@ function Workout(){
                     ))}
                 </ul>
                 <div className={styles.workoutButtons}>
-                    <button onClick={start}><img src='./play-button.png'/></button>
-                    <button onClick={done}><img src='./stop.png'/></button>
+                    <button onClick={start}><img alt='play/pause button' src='./play-button.png'/></button>
+                    <button onClick={done}><img alt='stop button' src='./stop.png'/></button>
                 </div>
             </div>
          </div>

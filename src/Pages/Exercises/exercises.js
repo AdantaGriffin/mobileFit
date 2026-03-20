@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import styles from './exercises.module.scss';
 import { useApi } from '../../Components/Api/api';
 
@@ -31,11 +31,11 @@ function Exercises(){
                 </nav>
                 <div className={styles.exercisesList}>
                     <ul>
-                        {exercises.map(x => {
+                        {exercises?.map(x => {
                             if(x.type === selectedType){
                                 return <li key={x.id}>
                                             <Link>
-                                                <img src={x.image} width="50px" height="50px"/>
+                                                <img alt={x.name} src={x.image} width="50px" height="50px"/>
                                                 <p>{x.name}</p>
                                             </Link>
                                         </li>
@@ -43,7 +43,7 @@ function Exercises(){
                                 if(x.part === selectedType){
                                     return <li key={x.id}>
                                                 <Link>
-                                                    <img src={x.image} width="50px" height="50px"/>
+                                                    <img alt={x.name} src={x.image} width="50px" height="50px"/>
                                                     <p>{x.name}</p>
                                                 </Link>
                                             </li>

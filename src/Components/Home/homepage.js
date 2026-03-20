@@ -4,7 +4,7 @@ import { useApi } from '../Api/api';
 import styles from './homepage.module.scss';
 
 function Homepage(){
-    const {minutes, timeSum} = useApi();
+    const {timeSum} = useApi();
     return(
         <>
             <section className={styles.home}>
