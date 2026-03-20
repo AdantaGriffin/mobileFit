@@ -22,7 +22,7 @@ function App() {
 
   return (
     <ApiProvider>
-      <RouterProvider router={AppRouter}/>
+      <RouterProvider className={styles.App} router={AppRouter}/>
     </ApiProvider>
   );
 }
