@@ -1,6 +1,5 @@
 import styles from './App.module.scss';
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
-
 import Root from './Components/Root/root';
 import Homepage from './Components/Home/homepage';
 import Routines from './Pages/Routines/routines';

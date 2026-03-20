@@ -49,6 +49,7 @@ function Exercises(){
                                             </li>
                                 }
                             }
+                            return null;
                         })}
                     </ul>
                 </div>
