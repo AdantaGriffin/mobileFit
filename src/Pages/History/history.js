@@ -1,41 +1,25 @@
 import React from 'react';
 import styles from './history.module.scss';
+import { useApi } from '../../Components/Api/api';
 
 function History(){
+    const {timeSum} = useApi();
     return(
         <>
             <div className={styles.history}>
-                <header>
-                    <h2>History</h2>
-                    <p>browse and explore</p>
-                </header>
-                <table className={styles.historyRecords}>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <p>total workouts</p>
-                                <p>0</p>
-                            </td>
-                            <td>
-                                <p>total minnutes</p>
-                                <p>0</p>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p>total sets</p>
-                                <p>0</p>
-                            </td>
-                            <td>
-                                <p>total reps</p>
-                                <p>0</p>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div className={styles.historyList}>
-                    <p>No Workouts Yet</p>
-                    <p>Complete your first workout to see it here</p>
+                <div className={styles.historyResults}>
+                    <div>
+                        <div>workouts</div>
+                        <div>0</div>
+                    </div>
+                    <div>
+                        <div>minutes</div>
+                        <div>{timeSum/60 < 1 ? 0 :( Math.floor(timeSum / 60))}:{timeSum%60 < 10 ? "0" + timeSum%60 : timeSum%60}</div>
+                    </div>
+                    <div>
+                        <div>sets</div>
+                        <div>0</div>
+                    </div>
                 </div>
             </div>
         </>

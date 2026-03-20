@@ -3,7 +3,7 @@
         {
             "id":1000,
             "type":"calisthenic",
-            "image":"",
+            "image":"tricep.png",
             "name":"triceps extension",
             "level":2,
             "part":"arm",
@@ -45,7 +45,7 @@
         {
             "id":1003,
             "type":"calisthenic",
-            "image":"",
+            "image":"tricep.png",
             "name":"narrow tricep push up",
             "level":"3",
             "part":"arms",
@@ -59,7 +59,7 @@
         {
             "id":1004,
             "type":"calisthenic",
-            "image":"",
+            "image":"tricep.png",
             "name":"three point bench dip",
             "level":"2",
             "part":"arms",
@@ -73,7 +73,7 @@
         {
             "id":1100,
             "type":"calisthenic",
-            "image":"",
+            "image":"neck.png",
             "name":"wall anterior neck isohold",
             "level":"2",
             "part":"neck-shoulder",
@@ -87,7 +87,7 @@
         {
             "id":1101,
             "type":"calisthenic",
-            "image":"",
+            "image":"neck.png",
             "name":"manual neck holds",
             "level":"1",
             "part":"neck-shoulder",
@@ -297,7 +297,7 @@
         {
             "id":1301,
             "type":"calisthenic",
-            "image":"",
+            "image":"core2.png",
             "name":"superman",
             "level":"",
             "part":"core",
@@ -311,7 +311,7 @@
         {
             "id":1302,
             "type":"calisthenic",
-            "image":"",
+            "image":"core3.png",
             "name":"bicycle",
             "level":"",
             "part":"core",
@@ -325,7 +325,7 @@
         {
             "id":1303,
             "type":"calisthenic",
-            "image":"",
+            "image":"core4.png",
             "name":"seated knee up",
             "level":"",
             "part":"core",
@@ -339,7 +339,7 @@
         {
             "id":1304,
             "type":"calisthenic",
-            "image":"",
+            "image":"core4.png",
             "name":"bent knee single leg extension",
             "level":"",
             "part":"core",
@@ -353,7 +353,7 @@
         {
             "id":1305,
             "type":"calisthenic",
-            "image":"",
+            "image":"core4.png",
             "name":"double leg raise",
             "level":"",
             "part":"core",
@@ -367,7 +367,7 @@
         {
             "id":1306,
             "type":"calisthenic",
-            "image":"",
+            "image":"core2.png",
             "name":"sit up",
             "level":"",
             "part":"core",
@@ -381,7 +381,7 @@
         {
             "id":1307,
             "type":"calisthenic",
-            "image":"",
+            "image":"core2.png",
             "name":"front plank",
             "level":"",
             "part":"core",
@@ -395,7 +395,7 @@
         {
             "id":1309,
             "type":"calisthenic",
-            "image":"",
+            "image":"core3.png",
             "name":"oblique raise",
             "level":"",
             "part":"core",
@@ -409,7 +409,7 @@
         {
             "id":1310,
             "type":"calisthenic",
-            "image":"",
+            "image":"core2.png",
             "name":"rkp plank",
             "level":"",
             "part":"core",
@@ -423,7 +423,7 @@
         {
             "id":1311,
             "type":"calisthenic",
-            "image":"",
+            "image":"core3.png",
             "name":"side plank",
             "level":"",
             "part":"core",
@@ -437,7 +437,7 @@
         {
             "id":1312,
             "type":"calisthenic",
-            "image":"",
+            "image":"core4.png",
             "name":"hanging leg raise",
             "level":"",
             "part":"core",
@@ -451,7 +451,7 @@
         {
             "id":1313,
             "type":"calisthenic",
-            "image":"",
+            "image":"core3.png",
             "name":"oblique hanging leg raise",
             "level":"",
             "part":"core",
@@ -465,7 +465,7 @@
         {
             "id":1314,
             "type":"calisthenic",
-            "image":"",
+            "image":"core2.png",
             "name":"roll out",
             "level":"",
             "part":"core",
@@ -479,7 +479,7 @@
         {
             "id":1315,
             "type":"calisthenic",
-            "image":"",
+            "image":"core2.png",
             "name":"sliding body saw",
             "level":"",
             "part":"core",
@@ -521,7 +521,7 @@
         {
             "id":1402,
             "type":"calisthenic",
-            "image":"",
+            "image":"back3.png",
             "name":"towel pull up",
             "level":"",
             "part":"back",
@@ -535,7 +535,7 @@
         {
             "id":1403,
             "type":"calisthenic",
-            "image":"",
+            "image":"back.png",
             "name":"modified inverted row",
             "level":"2",
             "part":"back",
@@ -563,7 +563,7 @@
         {
             "id":1405,
             "type":"calisthenic",
-            "image":"",
+            "image":"back3.png",
             "name":"scapular shrug",
             "level":"2",
             "part":"back",
@@ -577,7 +577,7 @@
         {
             "id":1406,
             "type":"calisthenic",
-            "image":"",
+            "image":"back3.png",
             "name":"towel face pull",
             "level":"",
             "part":"back",
@@ -983,7 +983,7 @@
         {
             "id":1800,
             "type":"calisthenic",
-            "image":"",
+            "image":"fire.png",
             "name":"jumping jack",
             "level":"",
             "part":"full",
@@ -997,7 +997,7 @@
         {
             "id":1801,
             "type":"calisthenic",
-            "image":"",
+            "image":"fire.png",
             "name":"burpee",
             "level":"",
             "part":"full",
@@ -1011,7 +1011,7 @@
         {
             "id":1802,
             "type":"calisthenic",
-            "image":"",
+            "image":"fire.png",
             "name":"push up with extension",
             "level":"",
             "part":"full",
@@ -1025,7 +1025,7 @@
         {
             "id":1803,
             "type":"calisthenic",
-            "image":"",
+            "image":"fire.png",
             "name":"towel row isohold with glute march",
             "level":"",
             "part":"full",
@@ -1039,7 +1039,7 @@
         {
             "id":1804,
             "type":"calisthenic",
-            "image":"",
+            "image":"fire.png",
             "name":"sit up burpee",
             "level":"",
             "part":"full",
@@ -1053,7 +1053,7 @@
         {
             "id":1805,
             "type":"calisthenic",
-            "image":"",
+            "image":"fire.png",
             "name":"mountain climbers",
             "level":"",
             "part":"full",
@@ -1067,7 +1067,7 @@
         {
             "id":1806,
             "type":"calisthenic",
-            "image":"",
+            "image":"fire.png",
             "name":"bear crawl",
             "level":"2",
             "part":"full",
@@ -1081,7 +1081,7 @@
         {
             "id":1807,
             "type":"calisthenic",
-            "image":"",
+            "image":"fire.png",
             "name":"jumping muscle up",
             "level":"",
             "part":"full",
@@ -1095,7 +1095,7 @@
         {
             "id":1808,
             "type":"calisthenic",
-            "image":"",
+            "image":"fire.png",
             "name":"crocodile crawl",
             "level":"3",
             "part":"full",
@@ -1109,7 +1109,7 @@
         {
             "id":1809,
             "type":"calisthenic",
-            "image":"",
+            "image":"fire.png",
             "name":"crab walk",
             "level":"",
             "part":"full",
@@ -1123,7 +1123,7 @@
         {
             "id":2000,
             "type":"mobility",
-            "image":"",
+            "image":"mobility.png",
             "name":"mobility one",
             "level":"",
             "part":"",
@@ -1137,7 +1137,7 @@
         {
             "id":2001,
             "type":"mobility",
-            "image":"",
+            "image":"mobility.png",
             "name":"mobility two",
             "level":"",
             "part":"",

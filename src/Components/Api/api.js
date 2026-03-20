@@ -3,12 +3,8 @@ import React, {useState, useEffect, createContext, useContext} from 'react';
 const ApiContext = createContext();
 
 export function ApiProvider({children}){
+    //Exercise page state
     const [exercises, setExercises] = useState([]);
-    const [routines, setRoutines] = useState([]);
-    const [history, setHistory] = useState([]);
-    const [weekly, setWeekly] = useState([]);
-    const [text, setText] = useState('');
-
     useEffect(() => {
         async function getExercises(){
             const response = await fetch('data.json');
@@ -18,29 +14,43 @@ export function ApiProvider({children}){
         }
         getExercises()
     }, [])
-    const addExercise = (item) => {
-        const existingItem = routines.find(i => i.id === item.id);
-        if(existingItem){
-            //alert('exercise already set')
-        } else{
-            //alert(`${item.name} added to list`) 
-            setRoutines(prev => [...prev, item]);
+    //Routine page state
+    const [savedRoutines, setSavedRoutines] = useState([
+        /*{
+            id:'1',
+            name:'routine one',
+            exerciseList:['one', "two", "three"]
+        },
+        {
+            id:'2',
+            name:'routine two',
+            exerciseList:['one', "two", "three"]
+        },
+        {
+            id:'3',
+            name:'routine three',
+            exerciseList:['one', "two", "three"]
+        }*/
+    ]);
+    const [types, setTypes] = useState([]);
+    useEffect(() => {
+        async function getTypes(){
+            const response = await fetch(`types.json`);
+            const result = await response.json();
+            setTypes(result)
         }
-    };
-    const removeExercise = (id) => {
-        setRoutines(prev => prev.filter(item => item.id !== id));
-    };
-    const handleTextChange = (event) => {
-        event.preventDefault()
-        setText(event.target.value.toLowerCase()); 
-        
-    };
-    const findExercise = (letter) => (ex) => ex.name.toLowerCase().includes(letter) ||
-    ex.type.toLowerCase().includes(letter)
+        getTypes()
+    }, [])
+    const [routineList, setRoutineList] = useState([]);
+    const [routineTitle, setRoutineTitle] = useState('');
+    const [timer, setTimer] = useState(0);
+    const [timeSum, setTimeSum] = useState(0);
+    //History Page State
+    const [minutes, setMinutes] = useState(0);
 
     return(
         <ApiContext.Provider
-            value={{text, setText, exercises, routines, history, weekly, addExercise, removeExercise, handleTextChange, findExercise}}    
+            value={{exercises, savedRoutines, setSavedRoutines, types, routineList, setRoutineList, routineTitle, setRoutineTitle, minutes, setMinutes, timer, setTimer, timeSum, setTimeSum}}    
         >
             {children}
         </ApiContext.Provider>

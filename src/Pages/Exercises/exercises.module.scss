@@ -82,13 +82,15 @@
                 height: 60px;
                 margin-bottom: 5px;
                 align-content: center;
+                background: linear-gradient(rgb(175, 71, 206), rgb(221, 123, 246));
+                box-shadow: 1px 1px 10px rgb(87, 87, 88);
                 a{
                     display: grid;
                     grid-template-columns: 1fr 1fr;
                     width: 80%;
                     margin: auto;
                     align-items: center;
-                    color: black;
+                    color: white;
                     text-decoration: none;
                     padding: 0 10px;
                 }

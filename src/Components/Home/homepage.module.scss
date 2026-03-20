@@ -13,6 +13,7 @@
     height: 80vh;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
+    font-weight: 700;
 }
 .weekly{
     padding: 5px;
@@ -32,16 +33,22 @@
     }
 }
 .recent, .quick{
+    padding: 5px;
+    color: white;
+    border-radius: 20px;
+    background: linear-gradient(rgb(175, 71, 206), rgb(221, 123, 246));
+    box-shadow: 1px 1px 10px rgb(87, 87, 88);
+    height: 70%;
     .weeklyResults, .quickStart, .recentActivity{
         border: 2px dotted grey;
-        height: 60%;
+        height: 50%;
         width: 90%;
         margin: auto;
         text-align: center;
         align-content: center;
     }
     a{
-        color: black;
+        color: white;
         text-decoration: none;
     }
 }

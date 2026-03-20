@@ -1,46 +1,106 @@
-import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import React, {useState, useRef} from 'react';
+import { NavLink, Link } from 'react-router-dom';
 import styles from './routines.module.scss';
 import { useApi } from '../../Components/Api/api';
 
 function Routines(){
-    const {exercises, addExercise, routines, setRoutines} = useApi();
+    const {savedRoutines, setSavedRoutines, exercises, types, routineList, setRoutineList, routineTitle, setRoutineTitle} = useApi();
     const [popUp, setPopUp] = useState(false);
-    console.log(routines);
-
+    const [filter, setFilter] = useState('all');
+    const filtered = filter === 'all' ? exercises : exercises.filter(x => x.part === filter);
     
+  //console.log(exercises)
+    const add = (exercise) => {
+      setSavedRoutines(prev => {
+
+        if (prev.length === 0) {
+          return [
+            {
+              id: exercise.id,
+              name: "temp routine",
+              exercise: [exercise]
+            }
+          ];
+        }
+    
+        const routine = prev[0];
+    
+        return [
+          {
+            ...routine,
+            exercise: [...routine.exercise, exercise]
+          }
+        ];
+      });
+    };
+    const done = () => {
+      if (savedRoutines.length === 0) return;
+
+      const routine = savedRoutines[0];
+
+      setRoutineList(prev => [
+        ...prev,
+        {
+          id: prev.id,
+          name: routineTitle,
+          exercise: routine.exercise
+        }
+      ]);
+
+      setSavedRoutines([]);
+      setRoutineTitle('');
+      setPopUp(false);
+    };
+    const isAdded = (id) => {
+      return savedRoutines[0]?.exercise?.some(e => e.id === id);
+    };
     return (
         <>
             <div className={styles.routines}>
-                <header className={styles.routineHeader}>
-                    <h2>Routines</h2>
-                    <p>browse and explore</p>
-                </header>
-                <div>
-                    <div className={styles.routinesList}>
-                        {routines === null ? routines.map(x => (
-                            <div>{x.name}</div>
-                        )) : (
-                            <>
-                                <p>No Routines Yet</p>
-                                <p>Create your first Routine</p>
-                                <Link onClick={(() => setPopUp(prev => !prev))}>Create a routine</Link>
-                            </>
-                        )}
+                {routineList?.length > 0 ? routineList?.map((x,i) => (
+                    <article className={styles.routineArticle} key={i}>
+                        <details>
+                            <summary>{x.name}</summary>
+                            <p key={x.id}>{x.exercise.map(e => e.name).join(' ⏐ ')}</p>
+                        </details>
+                        <Link to={`/${i}`}>Start</Link>
+                    </article>
+                    
+                )) : 
+                    <article  key={1} className={styles.createFirst}>
+                            <p>create your first routine</p>
+                            <button onClick={() => setPopUp(true)}>tap to get started</button>
+                    </article>
+                }
+
+                {routineList?.length > 0 ? <button className={styles.createNewButton} onClick={() => setPopUp(true)}>create new</button> : ""}
+
+                {popUp && (
+                    <div className={styles.popUp}>
+                        <input type="text" placeholder="routine name" value={routineTitle} onChange={(e) => setRoutineTitle(e.target.value)}/>
+                        <button onClick={done} className={styles.close} >Add Routine</button>
+                        <nav>
+                            <ul className={styles.popUpNav}>
+                                {types.types.map(x => (
+                                    <li key={x.type}>
+                                        <button onClick={() => setFilter(x.type)}>{x.type}</button>
+                                    </li>
+                                ))}
+                            </ul>
+                        </nav>
+                        <ul className={styles.popUpList}>
+                            {filtered.map(x => (
+                                <li key={x.id}>
+                                    <img src={x.image} height="30px"/>
+                                    {x.name}
+                                    
+                                    <button onClick={(e) => {add(x); e.target.innerText = '-'}} className={styles.add}>+</button></li>
+                            ))}
+                        </ul>
                     </div>
-                </div>
-                <div className={popUp ? styles.popUp : styles.hide}>
-                    <ul>
-                        {exercises.map(x => (
-                            <li key={x.id}>
-                                <img src={x.image} width="40px" height="40px"/>
-                                <p>{x.name}</p>
-                                <button onClick={addExercise}>+</button>
-                            </li>
-                        ))}
-                    </ul>
-                    <button onClick={(() => setPopUp(prev => !prev))} className={styles.doneButton}>DONE</button>
-                </div>
+                )}
+
+
             </div>
         </>
     )

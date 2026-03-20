@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { useApi } from '../Api/api';
 import styles from './homepage.module.scss';
 
 function Homepage(){
+    const {minutes, timeSum} = useApi();
     return(
         <>
             <section className={styles.home}>
@@ -16,7 +17,7 @@ function Homepage(){
                         </div>
                         <div>
                             <div>minutes</div>
-                            <div>0</div>
+                            <div>{timeSum/60 < 1 ? 0 :( Math.floor(timeSum / 60))}:{timeSum%60 < 10 ? "0" + timeSum%60 : timeSum%60}</div>
                         </div>
                         <div>
                             <div>sets</div>
@@ -28,14 +29,14 @@ function Homepage(){
                     <h3>quick start</h3>
                     <div className={styles.quickStart}>
                         <p>create your first routine</p>
-                        <Link to="routines">tap to get started</Link>
+                        <Link to="/routines">tap to get started</Link>
                     </div>
                 </section>
                 <section className={styles.recent}>
                     <h3>recent activity</h3>
                     <div className={styles.recentActivity}>
                         <p>No workouts yet</p>
-                        <Link to="history">start a routine to track your progress</Link>
+                        <Link to="/history">start a routine to track your progress</Link>
                     </div>
                 </section>
             </section>

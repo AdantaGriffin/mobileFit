@@ -4,10 +4,10 @@ import styles from './exercises.module.scss';
 import { useApi } from '../../Components/Api/api';
 
 function Exercises(){
-    const {exercises, text, setText, handleTextChange, findExercise} = useApi();
+    const {exercises} = useApi();
     const [selectedType, setSelectedType] = useState('calisthenic');
     
-    console.log(selectedType)
+    //console.log(selectedType)
     return (
         <>
             <div className={styles.exercises}>
@@ -33,7 +33,7 @@ function Exercises(){
                     <ul>
                         {exercises.map(x => {
                             if(x.type === selectedType){
-                                return <li>
+                                return <li key={x.id}>
                                             <Link>
                                                 <img src={x.image} width="50px" height="50px"/>
                                                 <p>{x.name}</p>
@@ -41,7 +41,7 @@ function Exercises(){
                                         </li>
                             } else{
                                 if(x.part === selectedType){
-                                    return <li>
+                                    return <li key={x.id}>
                                                 <Link>
                                                     <img src={x.image} width="50px" height="50px"/>
                                                     <p>{x.name}</p>

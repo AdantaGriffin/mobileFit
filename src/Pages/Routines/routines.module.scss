@@ -11,71 +11,103 @@
 .routines{
     animation: fadeIn .4s ease;
     height: 80vh;
-    display: grid;
-    grid-template-rows: 10% 90%;
-
-    .routinesList{
-        height: 100%;
-        align-content: center;
-        text-align: center;
-        a{
-            border: 1px solid black;
-            color: black;
-            text-decoration: none;
-            padding: 10px 30px;
-            &:focus{
-              background-color: red;
-            }
-        }
-    }
-
-    .popUp{
-      border: 1px dotted black;
-      position: relative;
-      bottom: 600px;
-      height: 550px;
-      width: 90%;
+    .routineArticle{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+      background: rgba(175, 71, 206, .7);
       border-radius: 20px;
+      min-height: 50px;
+      margin: 20px 0;
+      a{
+        color: white;
+      }
+    }
+    .createFirst{
+      border: 2px dotted grey;
+      border-radius: 20px;
+      width: 90%;
+      padding: 50px 15px;
       margin: auto;
-      background-color: rgba(120, 120, 120, .9);
+      text-align: center;
+      align-content: center;
+      position: relative;
+      top: 40%;
+      background: linear-gradient(rgb(175, 71, 206), rgb(221, 123, 246));
+      box-shadow: 1px 1px 10px rgb(87, 87, 88);
+    }
+    .createNewButton{
+      width: 100%;
+      border-radius: 20px;
+      height: 40px;
+    }
+    a{
+        color: black;
+        text-decoration: none;
+    }
+    .popUp{
+      position: fixed;   // 🔥 key fix
+      top: 20%;
+      left: 1;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      z-index: 10;
+      width: 400px;
+      height: 600px;
       overflow: scroll;
-      padding: 25px;
-      ul{
-        padding: 0;
-        margin: 0;
-        li{
+      nav{
+        align-items: center;
+        height: 50px;
+        overflow-y: scroll;
+        .popUpNav{
+          padding: 0;
+          margin: 0;
+          list-style: none;
           display: flex;
-          justify-content: space-between;
-          border: .5px solid whitesmoke;
-          margin-bottom: 2px;
-          align-items: center;
-          button{
-            height: 50%;
-            background-color: transparent;
+          justify-content: space-around;
+          width: 1000px;
+          li{
             border-radius: 20px;
-            &:hover {
-              cursor: pointer;
+            width: 100px;
+            text-align: center;
+            align-content: center;
+            background-color: rgb(175, 71, 206);
+            color: white;
+            button{
+              background-color: transparent;
+              border: none;
+              color: white;
+              &:hover {
+                cursor: pointer;
+              }
             }
           }
         }
       }
-      .doneButton{
-        width: 300px;
-        height: 40px;
-        position: fixed;
-        bottom: 100px;
-        left: 21%;
-        border-radius: 20px;
-        background-color: lightgreen;
-        border: none;
-        &:hover {
-          cursor: pointer;
+      .popUpList{
+        padding: 0;
+        margin:0;
+        list-style: none;
+        min-height: 90%;
+        li{
+          display: flex;
+          justify-content: space-between;
+          color: black;
+          height: 50px;
+          align-items: center;
+        }
+        button{
+          height: 30px;
+          width: 50px;
         }
       }
-    }
-      .hide{
-        display: none;
+      .close{
+        margin: auto;
+        width: 100%;
       }
+    }
 }
 
 
