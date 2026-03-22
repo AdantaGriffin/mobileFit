@@ -25,6 +25,7 @@ function Homepage(){
                         </div>
                     </div>
                 </section>
+
                 <section className={styles.quick}>
                     <h3>quick start</h3>
                     <div className={styles.quickStart}>
@@ -32,6 +33,7 @@ function Homepage(){
                         <Link to="/routines">tap to get started</Link>
                     </div>
                 </section>
+                
                 <section className={styles.recent}>
                     <h3>recent activity</h3>
                     <div className={styles.recentActivity}>

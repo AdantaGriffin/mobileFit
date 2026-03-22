@@ -12,7 +12,6 @@ function Routines(){
   //console.log(exercises)
     const add = (exercise) => {
       setSavedRoutines(prev => {
-
         if (prev.length === 0) {
           return [
             {
@@ -74,8 +73,12 @@ function Routines(){
 
                 {popUp && (
                     <div className={styles.popUp}>
-                        <input type="text" placeholder="routine name" value={routineTitle} onChange={(e) => setRoutineTitle(e.target.value)}/>
-                        <button onClick={done} className={styles.close} >Add Routine</button>
+                      
+                        <div className={styles.popUpHeader}>
+                          <input type="text" placeholder="routine name" value={routineTitle} onChange={(e) => setRoutineTitle(e.target.value)}/>
+                          <button onClick={done} className={styles.close} >Add Routine</button>
+                        </div>
+
                         <nav>
                             <ul className={styles.popUpNav}>
                                 {types.types.map(x => (
@@ -85,6 +88,7 @@ function Routines(){
                                 ))}
                             </ul>
                         </nav>
+
                         <ul className={styles.popUpList}>
                             {filtered.map(x => (
                                 <li key={x.id}>
@@ -94,6 +98,7 @@ function Routines(){
                                     <button onClick={(e) => {add(x); e.target.innerText = '-'}} className={styles.add}>+</button></li>
                             ))}
                         </ul>
+
                     </div>
                 )}
 

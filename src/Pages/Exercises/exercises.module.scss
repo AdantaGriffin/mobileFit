@@ -54,7 +54,7 @@
                 color: black;
             }
             .active{
-              background-color: rgb(175, 71, 206);
+              background: linear-gradient(rgb(48, 2, 231), rgb(87, 51, 227));
               color: whitesmoke;
             }
 
@@ -82,7 +82,7 @@
                 height: 60px;
                 margin-bottom: 5px;
                 align-content: center;
-                background: linear-gradient(rgb(175, 71, 206), rgb(221, 123, 246));
+                background: linear-gradient(rgb(48, 2, 231), rgb(87, 51, 227));
                 box-shadow: 1px 1px 10px rgb(87, 87, 88);
                 a{
                     display: grid;

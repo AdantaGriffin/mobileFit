@@ -1,5 +1,7 @@
 .workoutContainer{
     height: 80vh;
+    background: linear-gradient(rgb(48, 2, 231), rgb(87, 51, 227));
+    color: white;
     font: {
         weight: 700;
         size: 1.2em;
@@ -14,23 +16,23 @@
         }
     }
     .workoutListContainer{
+        height: 99%;
         display: grid;
-        grid-template-rows: 10% 10% 60% 15%;
+        grid-template-rows: 10% 10% 70% 10%;
         padding: 0 5px;
-        background: linear-gradient(rgb(175, 71, 206), rgb(221, 123, 246));
         box-shadow: 1px 1px 10px rgb(87, 87, 88);
         border-radius: 20px;
         .quote{
             text-align: center;
+            align-content: center;
         }
     }
     .workoutList{
-        margin: 0;
+        margin: auto;
         padding: 0;
         list-style: none;
-        align-content: center;
-        height: 70vh;
         text-align: center;
+        align-content: center;
         li{
             margin: 5px;
         }
@@ -38,16 +40,17 @@
     .workoutButtons{
         display: flex;
         justify-content: space-around;
-        height: 50%;
+        height: 60%;
         border-radius: 20px;
         button{
             width: 100px;
             border-radius: 20px;
             border: none;
             box-shadow: 1px 1px 10px rgb(87, 87, 88);
+            padding: 5px;
             img{
-                width: 40%;
-                height: 40%;
+                width: 50%;
+                height: 90%;
             }
         }
     }

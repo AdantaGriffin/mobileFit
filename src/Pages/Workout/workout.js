@@ -38,24 +38,29 @@ function Workout(){
     }
     return(
         <>
-         {i}
          <div className={styles.workoutContainer}>
             <div className={styles.workoutListContainer}>
-            <header>
-                <h2>{routineList[i]?.name}</h2>
-                <div>{timer/60 < 1 ? 0 : Math.floor(timer / 60)}:{timer%60 < 10 ? "0" + timer%60 : timer%60}</div>
-            </header>
-            <div className={styles.quote}><i>"Today is just another day one, keep grinding!"</i></div>
+                <header>
+                    <h2>{routineList[i]?.name}</h2>
+                    <div>{timer/60 < 1 ? 0 : Math.floor(timer / 60)}:{timer%60 < 10 ? "0" + timer%60 : timer%60}</div>
+                </header>
+
+                <div className={styles.quote}>
+                    <i>"Today is just another day one, keep grinding!"</i>
+                </div>
+
                 <ul className={styles.workoutList}>
                     {routineList[i]?.exercise?.map(x => (
                         <li key={x.id}>{x.name}</li>
                     ))}
                 </ul>
+                
                 <div className={styles.workoutButtons}>
                     <button onClick={start}><img alt='play/pause button' src='./play-button.png'/></button>
                     <button onClick={done}><img alt='stop button' src='./stop.png'/></button>
                 </div>
             </div>
+
          </div>
         </>
     )
